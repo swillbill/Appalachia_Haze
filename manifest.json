@@ -1,0 +1,19 @@
+{
+  "name": "Appalachia Haze - Bluegrass Music For All Occasions",
+  "short_name": "Appalachia Haze",
+  "description": "Appalachia Haze is an authentic bluegrass band from Asheville, North Carolina. Live tour dates, videos, band story, and booking.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f4f3ea",
+  "theme_color": "#111111",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["music", "entertainment"]
+}
