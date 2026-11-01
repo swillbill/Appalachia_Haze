@@ -15,14 +15,14 @@
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="assets/favicon.svg">
 
-  <!-- Hippie 60s/70s Psychedelic Fonts (Shrikhand, Spicy Rice, Caprasimo) & Sans Body (Inter) -->
+  <!-- Hand-Inked Zine Fonts (Patrick Hand, Walter Turncoat) & Cloud Logo Display (Luckiest Guy) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Shrikhand&family=Spicy+Rice&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Luckiest+Guy&family=Patrick+Hand&family=Walter+Turncoat&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=30">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 </head>
 <body class="sg-theme">
@@ -43,10 +43,106 @@
         </ul>
       </nav>
 
-      <!-- Center Brand Wordmark -->
-      <a href="#hero" class="brand-logo">
-        <span class="logo-title">APPALACHIA <span class="logo-accent">HAZE</span></span>
-        <span class="logo-sub">ASHEVILLE, NC // BLUEGRASS</span>
+      <!-- Center Brand Wordmark (Fine-Liner Zine Doodle Cloud Logo on Unbleached Paper) -->
+      <a href="#hero" class="brand-logo" aria-label="Appalachia Haze - Home">
+        <svg class="nav-cloud-logo" viewBox="0 -10 980 265" role="img" aria-label="Appalachia Haze">
+          <defs>
+            <!-- Authentic Fine-Liner Micron Pen Hand-Tremor Filter -->
+            <filter id="handDrawnNav" x="-6%" y="-6%" width="112%" height="112%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.042" numOctaves="3" result="wobble" seed="31" />
+              <feDisplacementMap in="SourceGraphic" in2="wobble" scale="3.4" xChannelSelector="R" yChannelSelector="G" />
+            </filter>
+
+            <!-- Fine-Liner Cross-Hatch Pattern (Like the Trees & Shading in the Zine Photo) -->
+            <pattern id="zineCrossHatch" width="6.5" height="6.5" patternUnits="userSpaceOnUse">
+              <path d="M 0,6.5 L 6.5,0 M 0,0 L 6.5,6.5" stroke="#1e1b18" stroke-width="1.25" />
+            </pattern>
+
+            <!-- Wobbly Hand-Inked Box Filter for Cards, Signs & Buttons -->
+            <filter id="zineWobbleBox" x="-3%" y="-6%" width="106%" height="112%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.028" numOctaves="3" result="wobble" seed="19" />
+              <feDisplacementMap in="SourceGraphic" in2="wobble" scale="2.2" xChannelSelector="R" yChannelSelector="G" />
+            </filter>
+
+            <!-- Reusable Hand-Drawn Highway Route Shield (Like 'NUMBER 9' in the Zine Photo) -->
+            <g id="zineRouteShield">
+              <!-- Outer Shield Double Border -->
+              <path d="M -36,-38 C -22,-32 -8,-32 0,-38 C 8,-32 22,-32 36,-38 L 42,-20 C 34,-12 36,-2 42,8 C 38,24 20,36 0,42 C -20,36 -38,24 -42,8 C -36,-2 -34,-12 -42,-20 Z" fill="#ebe2cc" stroke="#1e1b18" stroke-width="2.8" stroke-linejoin="round" />
+              <path d="M -31,-32 C -19,-27 -7,-27 0,-32 C 7,-27 19,-27 31,-32 L 36,-18 C 29,-11 31,-2 36,7 C 32,20 17,30 0,36 C -17,30 -32,20 -36,7 C -31,-2 -29,-11 -36,-18 Z" fill="none" stroke="#1e1b18" stroke-width="1.8" stroke-linejoin="round" />
+            </g>
+
+            <!-- Reusable Cross-Hatched Pine Tree Cluster + Little Star Critter (From Zine Cover) -->
+            <g id="zinePineCluster">
+              <!-- Left Pine Tree -->
+              <path d="M -32,28 L -32,38 M -26,28 L -26,38" stroke="#1e1b18" stroke-width="2.2" />
+              <path d="M -29,-22 L -46,2 L -38,2 L -50,16 L -40,16 L -52,28 L -6,28 L -18,16 L -8,16 L -20,2 L -12,2 Z" fill="#ebe2cc" />
+              <path d="M -29,-22 L -46,2 L -38,2 L -50,16 L -40,16 L -52,28 L -6,28 L -18,16 L -8,16 L -20,2 L -12,2 Z" fill="url(#zineCrossHatch)" opacity="0.85" />
+              <path d="M -29,-22 L -46,2 L -38,2 L -50,16 L -40,16 L -52,28 L -6,28 L -18,16 L -8,16 L -20,2 L -12,2 Z" fill="none" stroke="#1e1b18" stroke-width="2.2" stroke-linejoin="round" />
+              <!-- Right Smaller Pine Tree -->
+              <path d="M 6,-8 L -8,10 L -2,10 L -10,22 L -2,22 L -10,32 L 22,32 L 14,22 L 22,22 L 14,10 L 20,10 Z" fill="#ebe2cc" />
+              <path d="M 6,-8 L -8,10 L -2,10 L -10,22 L -2,22 L -10,32 L 22,32 L 14,22 L 22,22 L 14,10 L 20,10 Z" fill="url(#zineCrossHatch)" opacity="0.85" />
+              <path d="M 6,-8 L -8,10 L -2,10 L -10,22 L -2,22 L -10,32 L 22,32 L 14,22 L 22,22 L 14,10 L 20,10 Z" fill="none" stroke="#1e1b18" stroke-width="2.2" stroke-linejoin="round" />
+              <!-- Little Wandering Star Critter from the Zine Cover -->
+              <g transform="translate(42, 16)">
+                <path d="M 0,-14 L 4,-4 L 14,-2 L 6,5 L 9,15 L 0,9 L -9,15 L -6,5 L -14,-2 L -4,-4 Z" fill="#ebe2cc" stroke="#1e1b18" stroke-width="2" stroke-linejoin="round" />
+                <circle cx="-2.5" cy="-1" r="1.3" fill="#1e1b18" />
+                <circle cx="2.5" cy="-1" r="1.3" fill="#1e1b18" />
+                <circle cx="0" cy="3" r="1.6" fill="#1e1b18" />
+              </g>
+            </g>
+
+            <!-- Simple Wobbly Fine-Liner Doodle Cloud Silhouette (Like the Clouds in 'TRAIN SONGZ') -->
+            <path id="organicCloudMain" d="
+              M 78,162
+              C 26,158 24,96 78,90
+              C 82,52 138,40 176,62
+              C 206,24 286,20 326,54
+              C 368,6 474,4 522,48
+              C 558,24 626,26 656,58
+              C 696,26 778,32 804,76
+              C 844,64 892,82 890,114
+              C 942,118 944,174 888,180
+              C 858,204 784,206 746,186
+              C 702,208 614,208 572,188
+              C 518,212 414,212 362,188
+              C 310,208 218,206 180,184
+              C 142,200 94,192 78,162 Z" />
+
+            <!-- Delicate Fine-Liner Inner Cloud Bump Lines (Single-Weight Micron Pen) -->
+            <g id="innerCloudTufts" fill="none" stroke="#1e1b18" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <!-- Subtle inner bump cusps along top & bottom edges -->
+              <path d="M 78,90 C 96,92 110,100 116,110" />
+              <path d="M 176,62 C 190,68 202,78 206,90" />
+              <path d="M 326,54 C 340,62 348,74 352,86" />
+              <path d="M 522,48 C 510,58 504,70 502,82" />
+              <path d="M 656,58 C 644,68 638,78 636,88" />
+              <path d="M 804,76 C 790,84 782,94 780,106" />
+              <path d="M 180,184 C 190,172 204,164 218,162" />
+              <path d="M 362,188 C 372,174 386,166 402,164" />
+              <path d="M 572,188 C 562,174 548,166 532,164" />
+              <path d="M 746,186 C 736,172 722,164 706,162" />
+
+              <!-- Small overlapping cloud puffs that tuck the bottom/top of a few letters -->
+              <path d="M 102,72 C 110,94 146,94 156,74" fill="#ebe2cc" />
+              <path d="M 302,70 C 312,92 352,92 362,72" fill="#ebe2cc" />
+              <path d="M 608,70 C 618,92 658,92 668,72" fill="#ebe2cc" />
+              <path d="M 218,168 C 230,146 272,146 284,168" fill="#ebe2cc" />
+              <path d="M 524,168 C 536,146 578,146 590,168" fill="#ebe2cc" />
+              <path d="M 786,166 C 798,146 836,146 848,166" fill="#ebe2cc" />
+            </g>
+          </defs>
+
+          <g filter="url(#handDrawnNav)">
+            <!-- Warm Unbleached Zine Paper Cloud with Thin Fine-Liner Black Ink Outline -->
+            <use href="#organicCloudMain" fill="#ebe2cc" stroke="#1e1b18" stroke-width="3.2" stroke-linejoin="round" />
+
+            <!-- Solid Hand-Inked Black Marker Lettering (Luckiest Guy, No 3D Extrusion or Gradients) -->
+            <text x="480" y="148" text-anchor="middle" style="font-family: 'Luckiest Guy', cursive; font-size: 56px; letter-spacing: 2.5px;" fill="#1e1b18">APPALACHIA HAZE</text>
+
+            <!-- Delicate Fine-Liner Inner Cloud Tufts -->
+            <use href="#innerCloudTufts" />
+          </g>
+        </svg>
       </a>
 
       <!-- Right Action CTA & Channel Links -->
@@ -71,11 +167,57 @@
   </header>
 
   <main>
-    <!-- Full-Width High-Impact Hero with Real Blue Ridge Mountain Panorama & Atmospheric Smoke -->
+    <!-- Full-Width High-Impact Hero with Hand-Drawn Fine-Liner Zine Mountain Panorama -->
     <section class="hero" id="hero">
       <div class="hero-overlay"></div>
+
+      <!-- Hand-Drawn Fine-Liner Zine Panorama Backdrop (Step-by-Step Scene) -->
+      <div class="zine-hero-backdrop" aria-hidden="true">
+        <svg class="zine-hero-scene-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+          <g filter="url(#handDrawnNav)">
+            <!-- STEP 2: Fine-Liner Blue Ridge Mountain Peaks & Drifting Ridge Clouds (Modeled After Upper-Left of 'TRAIN SONGZ') -->
+            <g class="zine-scene-step2-mountains" stroke="#1e1b18" stroke-linecap="round" stroke-linejoin="round">
+
+              <!-- Far Back Left & Right Mountain Range -->
+              <path d="M -30,360 L 85,220 L 175,275 L 284,148 L 430,285 L 555,210 L 690,320 L 820,235 L 965,310 L 1135,175 L 1270,275 L 1385,205 L 1470,280 L 1470,520 L -30,520 Z" fill="#ebe2cc" stroke-width="2.6" />
+
+              <!-- Inner Ridge Line & Summit Snow/Rock Cap Lines on High Left Peak (284,148) -->
+              <path d="M 264,172 C 276,178 292,178 304,172" fill="none" stroke-width="2.2" />
+              <path d="M 284,148 L 250,248 L 210,335" fill="none" stroke-width="2.2" />
+              <path d="M 284,148 L 348,265 L 445,355" fill="none" stroke-width="2" />
+              <path d="M 85,220 L 125,310 M 85,220 L 42,305" fill="none" stroke-width="2" />
+              <path d="M 555,210 L 520,295 M 555,210 L 615,315" fill="none" stroke-width="2" />
+              <path d="M 1135,175 L 1085,295 M 1135,175 L 1205,310" fill="none" stroke-width="2.2" />
+              <path d="M 1385,205 L 1340,300" fill="none" stroke-width="2" />
+
+              <!-- Overlapping Mid-Range Foothill Ridges Sloping Down Toward the Valley -->
+              <path d="M -30,445 L 135,315 L 265,390 L 395,295 L 595,435 L 890,430 L 1045,315 L 1195,395 L 1325,310 L 1470,410 L 1470,580 L -30,580 Z" fill="#e6dec8" stroke-width="2.5" />
+              <!-- Mid-Ridge Diagonal Slope Contours (Exact Style of 'TRAIN SONGZ' Foothills) -->
+              <path d="M 135,315 L 195,425 M 395,295 L 345,410 M 395,295 L 485,430 M 1045,315 L 985,425 M 1325,310 L 1275,415" fill="none" stroke-width="2" />
+
+              <!-- Low Puffy Ridge Clouds Hugging the Mountain Peaks (Left & Right, Just Like 'TRAIN SONGZ') -->
+              <!-- Left Peak Cloud 1 -->
+              <path d="M 24,252 C 8,250 10,230 28,228 C 36,214 62,214 72,226 C 88,214 116,218 122,232 C 138,234 138,252 118,254 Z" fill="#efe7d3" stroke-width="2.4" />
+              <!-- Left Peak Cloud 2 (Small Wisp Near High Summit) -->
+              <path d="M 188,196 C 176,194 178,180 192,178 C 198,170 218,170 226,178 C 238,172 256,176 258,186 C 268,188 266,198 252,199 Z" fill="#efe7d3" stroke-width="2.2" />
+              <!-- Left Mid-Slope Cloud (Overlapping the Ridge Below Summit) -->
+              <path d="M 282,236 C 264,234 266,212 288,210 C 296,194 328,194 342,208 C 360,194 392,198 398,216 C 418,218 416,238 394,240 Z" fill="#efe7d3" stroke-width="2.5" />
+
+              <!-- Right Peak Cloud 1 -->
+              <path d="M 1015,232 C 998,230 1000,210 1020,208 C 1028,194 1058,194 1070,206 C 1088,194 1118,198 1124,214 C 1142,216 1140,234 1120,236 Z" fill="#efe7d3" stroke-width="2.4" />
+              <!-- Right Peak Cloud 2 -->
+              <path d="M 1255,256 C 1240,254 1242,236 1260,234 C 1268,222 1294,222 1304,232 C 1320,222 1346,226 1352,240 C 1368,242 1366,258 1348,260 Z" fill="#efe7d3" stroke-width="2.3" />
+
+              <!-- Distant Little Fine-Liner V-Birds Over the Ridges -->
+              <path d="M 145,165 Q 154,155 162,166 Q 170,155 179,165" fill="none" stroke-width="2.2" />
+              <path d="M 1195,135 Q 1205,124 1214,136 Q 1223,124 1233,135" fill="none" stroke-width="2.2" />
+              <path d="M 1248,154 Q 1255,146 1262,155 Q 1269,146 1276,154" fill="none" stroke-width="2" />
+            </g>
+          </g>
+        </svg>
+      </div>
       
-      <!-- Living Mountain Smoke & Haze Atmospheric Effect -->
+      <!-- Living Mountain Smoke & Haze Drift Atmosphere -->
       <div class="smoke-atmosphere" aria-hidden="true">
         <div class="smoke-cloud smoke-cloud-1"></div>
         <div class="smoke-cloud smoke-cloud-2"></div>
@@ -86,19 +228,140 @@
       </div>
       
       <div class="hero-content">
-        <div class="hero-tag">[ ASHEVILLE, NORTH CAROLINA // BLUE RIDGE MOUNTAIN HAZE ]</div>
-        
+        <!-- Fine-Liner Pen Zine Doodle Cloud Logo & Surrounding Doodle Clouds/Birds -->
         <div class="hero-title-wrapper">
-          <div class="title-smoke-glow"></div>
-          <h1 class="hero-display-title">
-            APPALACHIA HAZE
-          </h1>
+          <div class="title-smoke-glow" aria-hidden="true"></div>
+          <h1 class="sr-only">APPALACHIA HAZE</h1>
+          <svg class="hero-cloud-logo" viewBox="-60 -65 1100 355" role="img" aria-label="Appalachia Haze Hand-Drawn Zine Cloud Illustration">
+            <defs>
+              <filter id="handDrawnHero" x="-6%" y="-6%" width="112%" height="112%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.042" numOctaves="3" result="wobble" seed="31" />
+                <feDisplacementMap in="SourceGraphic" in2="wobble" scale="3.6" xChannelSelector="R" yChannelSelector="G" />
+              </filter>
+            </defs>
+            <g filter="url(#handDrawnHero)">
+              <!-- Top-Left Fine-Liner Doodle Cloud (Modeled Directly After Top Clouds in 'TRAIN SONGZ') -->
+              <g class="floating-subcloud subcloud-1">
+                <path d="M -18,16 C -42,14 -40,-14 -14,-16 C -10,-36 26,-38 42,-20 C 60,-40 104,-36 116,-14 C 142,-16 164,-2 160,16 C 182,20 180,44 154,46 C 134,56 98,54 82,42 C 58,54 22,52 6,40 C -10,44 -24,32 -18,16 Z" fill="#ebe2cc" stroke="#1e1b18" stroke-width="2.8" stroke-linejoin="round" />
+                <path d="M 42,-20 C 50,-12 54,-2 54,6 M 116,-14 C 108,-6 104,4 104,12 M 82,42 C 88,32 96,26 106,24" fill="none" stroke="#1e1b18" stroke-width="2.2" stroke-linecap="round" />
+              </g>
+
+              <!-- Little Fine-Liner V-Birds (Just Like the Sky in 'TRAIN SONGZ') -->
+              <path d="M 225,-22 Q 238,-36 248,-20 Q 258,-36 272,-22" fill="none" stroke="#ebe2cc" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M 225,-22 Q 238,-36 248,-20 Q 258,-36 272,-22" fill="none" stroke="#1e1b18" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+
+              <path d="M 718,-28 Q 729,-40 738,-26 Q 747,-40 758,-28" fill="none" stroke="#ebe2cc" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M 718,-28 Q 729,-40 738,-26 Q 747,-40 758,-28" fill="none" stroke="#1e1b18" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+
+              <!-- Top-Right Fine-Liner Doodle Cloud -->
+              <g class="floating-subcloud subcloud-4">
+                <path d="M 812,18 C 788,16 790,-12 816,-14 C 822,-34 858,-36 874,-18 C 892,-36 934,-32 946,-10 C 972,-8 974,22 948,28 C 930,40 894,38 878,26 C 854,38 824,34 812,18 Z" fill="#ebe2cc" stroke="#1e1b18" stroke-width="2.8" stroke-linejoin="round" />
+                <path d="M 874,-18 C 882,-10 886,-2 886,6 M 878,26 C 884,18 892,12 900,10" fill="none" stroke="#1e1b18" stroke-width="2.2" stroke-linecap="round" />
+              </g>
+
+              <!-- Bottom-Left Fine-Liner Doodle Cloud -->
+              <g class="floating-subcloud subcloud-3">
+                <path d="M 12,244 C -12,240 -10,214 16,212 C 22,192 58,190 74,206 C 92,188 136,192 148,214 C 174,216 176,244 150,250 C 132,262 96,260 80,248 C 56,260 26,256 12,244 Z" fill="#ebe2cc" stroke="#1e1b18" stroke-width="2.8" stroke-linejoin="round" />
+                <path d="M 74,206 C 82,214 86,222 86,230 M 80,248 C 86,240 94,234 102,232" fill="none" stroke="#1e1b18" stroke-width="2.2" stroke-linecap="round" />
+              </g>
+
+              <!-- Bottom-Right Fine-Liner Doodle Cloud -->
+              <g class="floating-subcloud subcloud-5">
+                <path d="M 806,242 C 782,238 784,212 810,210 C 816,190 852,188 868,204 C 886,186 930,190 942,212 C 968,214 970,242 944,248 C 926,260 890,258 874,246 C 850,258 820,254 806,242 Z" fill="#ebe2cc" stroke="#1e1b18" stroke-width="2.8" stroke-linejoin="round" />
+                <path d="M 868,204 C 876,212 880,220 880,228 M 874,246 C 880,238 888,232 896,230" fill="none" stroke="#1e1b18" stroke-width="2.2" stroke-linecap="round" />
+              </g>
+
+              <!-- Main Hand-Sketched Zine Paper Cloud Silhouette with Fine-Liner Black Ink Outline -->
+              <use href="#organicCloudMain" fill="#ebe2cc" stroke="#1e1b18" stroke-width="3.4" stroke-linejoin="round" />
+
+              <!-- Hand-Inked Solid Black Marker Lettering (Luckiest Guy, Like 'TRAIN SONGZ' / 'NUMBER 9') -->
+              <text x="480" y="148" text-anchor="middle" style="font-family: 'Luckiest Guy', cursive; font-size: 56px; letter-spacing: 2.5px;" fill="#1e1b18">APPALACHIA HAZE</text>
+
+              <!-- Delicate Fine-Liner Inner Cloud Tufts -->
+              <use href="#innerCloudTufts" />
+            </g>
+          </svg>
         </div>
 
-        <div class="hero-slogan-strip">
-          <span class="slogan-bracket">//</span>
-          <span class="slogan-text">BLUEGRASS MUSIC FOR ALL OCCASIONS</span>
-          <span class="slogan-bracket">//</span>
+        <!-- Hand-Drawn Fine-Liner Folk Zine Daisy Emblem (Like the Flower & Cross-Hatching in 'TRAIN SONGZ') -->
+        <div class="rubberhose-flower-emblem" aria-hidden="true">
+          <svg viewBox="-120 -95 240 205" class="flower-mascot-svg">
+            <g filter="url(#handDrawnNav)">
+              <!-- Hand-Sketched Asymmetric Fine-Liner Daisy Petals (Each Individually Drawn, Not Cloned) -->
+              <g fill="#ebe2cc" stroke="#1e1b18" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round">
+                <!-- Top Petal -->
+                <path d="M -9,-22 C -16,-52 -10,-78 1,-78 C 12,-78 16,-50 8,-22 Z" />
+                <path d="M 0,-26 L 1,-54" stroke-width="1.6" />
+                <!-- Top-Right Petal -->
+                <path d="M 14,-18 C 34,-42 56,-56 64,-48 C 72,-40 52,-18 24,-6 Z" />
+                <path d="M 20,-12 L 44,-34" stroke-width="1.6" />
+                <!-- Right Petal -->
+                <path d="M 22,-4 C 52,-10 78,-4 78,7 C 78,18 50,20 22,12 Z" />
+                <path d="M 26,4 L 54,6" stroke-width="1.6" />
+                <!-- Bottom-Right Petal -->
+                <path d="M 18,12 C 42,30 58,52 50,60 C 42,68 20,48 6,22 Z" />
+                <path d="M 14,18 L 34,40" stroke-width="1.6" />
+                <!-- Bottom Petal -->
+                <path d="M 8,22 C 14,50 8,76 -2,76 C -12,76 -16,48 -8,22 Z" />
+                <path d="M 0,26 L -1,52" stroke-width="1.6" />
+                <!-- Bottom-Left Petal -->
+                <path d="M -10,20 C -28,46 -50,62 -58,54 C -66,46 -46,24 -20,10 Z" />
+                <path d="M -16,16 L -38,38" stroke-width="1.6" />
+                <!-- Left Petal -->
+                <path d="M -22,10 C -52,16 -78,10 -78,-2 C -78,-14 -50,-16 -22,-6 Z" />
+                <path d="M -26,2 L -54,0" stroke-width="1.6" />
+                <!-- Top-Left Petal -->
+                <path d="M -18,-10 C -44,-28 -62,-50 -54,-58 C -46,-66 -22,-44 -8,-20 Z" />
+                <path d="M -14,-16 L -36,-38" stroke-width="1.6" />
+              </g>
+
+              <!-- Double-Line Fine-Liner Stem & Cross-Hatched Folk Leaves -->
+              <path d="M -3,36 C -6,62 -4,84 -2,102 L 4,102 C 2,84 0,62 3,36 Z" fill="#ebe2cc" stroke="#1e1b18" stroke-width="2.5" stroke-linejoin="round" />
+
+              <!-- Left Leaf with Fine-Liner Grid Cross-Hatching (Like the Zine Trees) -->
+              <path d="M -3,96 C -30,90 -52,72 -58,54 C -36,56 -14,72 -2,92 Z" fill="#ebe2cc" />
+              <path d="M -3,96 C -30,90 -52,72 -58,54 C -36,56 -14,72 -2,92 Z" fill="url(#zineCrossHatch)" opacity="0.75" />
+              <path d="M -3,96 C -30,90 -52,72 -58,54 C -36,56 -14,72 -2,92 Z" fill="none" stroke="#1e1b18" stroke-width="2.5" stroke-linejoin="round" />
+
+              <!-- Right Leaf with Fine-Liner Grid Cross-Hatching -->
+              <path d="M 3,96 C 30,90 52,72 58,54 C 36,56 14,72 2,92 Z" fill="#ebe2cc" />
+              <path d="M 3,96 C 30,90 52,72 58,54 C 36,56 14,72 2,92 Z" fill="url(#zineCrossHatch)" opacity="0.75" />
+              <path d="M 3,96 C 30,90 52,72 58,54 C 36,56 14,72 2,92 Z" fill="none" stroke="#1e1b18" stroke-width="2.5" stroke-linejoin="round" />
+
+              <!-- Little Sketchy Ground Scratch Lines -->
+              <path d="M -42,102 L 42,102 M -26,106 L 28,106" stroke="#1e1b18" stroke-width="2.2" stroke-linecap="round" />
+
+              <!-- Simple Round Zine Doodle Flower Center (With the Sleepy/Content Doodle Face Like the Sun in 'TRAIN SONGZ') -->
+              <circle cx="0" cy="0" r="24" fill="#ebe2cc" stroke="#1e1b18" stroke-width="2.8" />
+              <!-- Sleepy/Happy Closed-Arc Eyes & Little U-Smile (Exact Match to the Sun in the Zine Photo) -->
+              <path d="M -12,-4 Q -8,-1 -4,-4" fill="none" stroke="#1e1b18" stroke-width="2.4" stroke-linecap="round" />
+              <path d="M 4,-4 Q 8,-1 12,-4" fill="none" stroke="#1e1b18" stroke-width="2.4" stroke-linecap="round" />
+              <path d="M -4,5 Q 0,11 4,5" fill="none" stroke="#1e1b18" stroke-width="2.4" stroke-linecap="round" />
+            </g>
+          </svg>
+        </div>
+
+        <!-- Hand-Drawn Floating Ribbon Banner (No Flagpole Mast) -->
+        <div class="zine-pennant-banner zine-floating-banner">
+          <svg viewBox="0 0 720 96" class="zine-pennant-svg" role="img" aria-label="Bluegrass Music For All Occasions">
+            <g filter="url(#handDrawnNav)">
+              <!-- Left Swallowtail Ribbon End Fold (Behind Main Banner) -->
+              <path d="M 68,28 L 16,32 L 36,54 L 14,76 L 82,72 Z" fill="#dfd3b5" stroke="#1e1b18" stroke-width="2.5" stroke-linejoin="round" />
+              <path d="M 68,62 L 82,72 L 68,72 Z" fill="#1e1b18" />
+
+              <!-- Right Swallowtail Ribbon End Fold (Behind Main Banner) -->
+              <path d="M 652,28 L 704,32 L 684,54 L 706,76 L 638,72 Z" fill="#dfd3b5" stroke="#1e1b18" stroke-width="2.5" stroke-linejoin="round" />
+              <path d="M 652,62 L 638,72 L 652,72 Z" fill="#1e1b18" />
+
+              <!-- Center Floating Ribbon Banner Strip -->
+              <path d="M 68,18 C 225,8 495,8 652,18 L 652,64 C 495,54 225,54 68,64 Z" fill="#ebe2cc" stroke="#1e1b18" stroke-width="2.8" stroke-linejoin="round" />
+              <!-- Subtle Inner Fine-Liner Stitch/Border Lines -->
+              <path d="M 78,24 C 228,15 492,15 642,24 M 78,57 C 228,48 492,48 642,57" fill="none" stroke="#1e1b18" stroke-width="1.4" stroke-dasharray="6 4" opacity="0.7" />
+
+              <!-- Hand-Lettered Slogan Centered Inside Floating Banner -->
+              <text x="360" y="47" text-anchor="middle" class="zine-pennant-text">BLUEGRASS MUSIC FOR ALL OCCASIONS</text>
+            </g>
+          </svg>
         </div>
 
         <p class="hero-prose">
@@ -108,11 +371,8 @@
         <!-- Direct Channel Links -->
         <div class="hero-channel-links">
           <a href="mailto:appalachiahaze@gmail.com" class="channel-pill"><i class="fa-solid fa-envelope"></i> EMAIL</a>
-          <span class="channel-sep">//</span>
           <a href="https://www.facebook.com/share/1CgWjL1v4Q/?mibextid=wwXIfr" target="_blank" rel="noopener" class="channel-pill"><i class="fa-brands fa-facebook-f"></i> FACEBOOK</a>
-          <span class="channel-sep">//</span>
           <a href="https://www.instagram.com/appalachia_haze/" target="_blank" rel="noopener" class="channel-pill"><i class="fa-brands fa-instagram"></i> INSTAGRAM</a>
-          <span class="channel-sep">//</span>
           <a href="https://www.youtube.com/@AppalachiaHaze" target="_blank" rel="noopener" class="channel-pill"><i class="fa-brands fa-youtube"></i> YOUTUBE</a>
         </div>
 
@@ -128,11 +388,32 @@
       </a>
     </section>
 
+    <!-- Hand-Drawn Fine-Liner Mountain Ridge, Clouds & Cross-Hatched Pine Forest Divider (From 'TRAIN SONGZ' Top Left) -->
+    <div class="zine-landscape-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none" class="zine-divider-svg">
+        <g filter="url(#zineWobbleBox)">
+          <!-- Background Paper Fill -->
+          <rect x="0" y="0" width="1440" height="120" fill="#e6dec8" />
+          <!-- Hand-Drawn Mountain Peaks & Ridges -->
+          <path d="M -20,115 L 110,32 L 210,78 L 350,18 L 490,82 L 620,28 L 760,86 L 910,22 L 1060,76 L 1210,26 L 1350,80 L 1460,38 L 1460,120 L -20,120 Z" fill="#efe7d3" stroke="#1e1b18" stroke-width="2.6" stroke-linejoin="round" />
+          <!-- Ridge Contour Lines -->
+          <path d="M 110,32 L 145,88 M 350,18 L 320,76 M 620,28 L 650,86 M 910,22 L 885,82 M 1210,26 L 1240,84" fill="none" stroke="#1e1b18" stroke-width="2" stroke-linecap="round" />
+          <!-- Little Ridge Clouds Drifting Across Peaks (Just Like 'TRAIN SONGZ' Upper Left) -->
+          <path d="M 285,48 C 272,46 274,30 290,28 C 296,18 318,18 326,28 C 340,18 364,22 368,34 C 382,36 382,50 366,52 Z" fill="#ebe2cc" stroke="#1e1b18" stroke-width="2.2" stroke-linejoin="round" />
+          <path d="M 855,52 C 842,50 844,34 860,32 C 866,22 888,22 896,32 C 910,22 934,26 938,38 C 952,40 952,54 936,56 Z" fill="#ebe2cc" stroke="#1e1b18" stroke-width="2.2" stroke-linejoin="round" />
+          <!-- Cross-Hatched Treeline Silhouette Along the Base -->
+          <path d="M -10,120 L -10,92 L 15,68 L 35,92 L 60,62 L 85,90 L 115,58 L 140,88 L 170,64 L 195,92 L 230,72 L 260,96 L 480,98 L 510,66 L 535,92 L 565,58 L 595,90 L 625,64 L 655,94 L 980,96 L 1010,64 L 1038,90 L 1068,56 L 1098,88 L 1128,62 L 1158,92 L 1380,94 L 1410,66 L 1445,92 L 1445,120 Z" fill="url(#zineCrossHatch)" opacity="0.78" stroke="#1e1b18" stroke-width="2.2" stroke-linejoin="round" />
+          <!-- Bottom Ink Rule -->
+          <line x1="0" y1="118" x2="1440" y2="118" stroke="#1e1b18" stroke-width="3" />
+        </g>
+      </svg>
+    </div>
+
     <!-- TOP BOOKING INQUIRY PROMPT BAR (Closer to the Top) -->
     <div class="top-booking-callout">
       <div class="container-fluid callout-content">
         <div class="callout-text-box">
-          <span class="callout-tag">[ BOOKINGS & FESTIVALS ]</span>
+          <span class="callout-tag">BOOKINGS & FESTIVALS</span>
           <h2 class="callout-title">WANT APPALACHIA HAZE TO PLAY AT YOUR VENUE OR FESTIVAL?</h2>
         </div>
         <div class="callout-action-box">
@@ -147,7 +428,7 @@
         
         <div class="section-title-bar">
           <div class="title-left">
-            <span class="section-badge">[ AROUND TOWN ]</span>
+            <span class="section-badge">AROUND TOWN</span>
             <h2 class="section-title">UPCOMING SHOWS</h2>
           </div>
           <p class="section-subtitle">Catch Appalachia Haze live around town at local breweries, listening rooms, and mountain gatherings.</p>
@@ -227,7 +508,7 @@
         
         <div class="section-title-bar">
           <div class="title-left">
-            <span class="section-badge">[ ABOUT THE BAND ]</span>
+            <span class="section-badge">ABOUT THE BAND</span>
             <h2 class="section-title">THE BAND</h2>
           </div>
           <p class="section-subtitle">Born in the ancient hills and deep porch traditions of Buncombe County, NC.</p>
@@ -267,25 +548,23 @@
         <div class="personnel-container">
           <div class="personnel-header">
             <h3 class="personnel-title">THE PICKERS</h3>
-            <span class="personnel-tag">[ 5-PIECE STRING BAND ]</span>
+            <span class="personnel-tag">5-PIECE STRING BAND</span>
           </div>
 
           <div class="personnel-grid">
             
-            <!-- Sarah Swilley -->
+            <!-- Mitchell Harbin -->
             <div class="personnel-tile">
               <div class="tile-info">
-                <h4 class="picker-name">Sarah Swilley</h4>
-                <div class="picker-instrument">Lead &amp; Harmony Vocals</div>
+                <h4 class="picker-name">Mitchell Harbin</h4>
               </div>
-              <div class="tile-role">FLATPICKING GUITAR</div>
+              <div class="tile-role">UPRIGHT BASS</div>
             </div>
 
-            <!-- Scoot Woody -->
+            <!-- Scott Woody -->
             <div class="personnel-tile">
               <div class="tile-info">
-                <h4 class="picker-name">Scoot Woody</h4>
-                <div class="picker-instrument">Harmony Vocals</div>
+                <h4 class="picker-name">Scott Woody</h4>
               </div>
               <div class="tile-role">5-STRING BANJO</div>
             </div>
@@ -294,7 +573,6 @@
             <div class="personnel-tile">
               <div class="tile-info">
                 <h4 class="picker-name">Bryan Clendenin</h4>
-                <div class="picker-instrument">Lead &amp; Harmony Vocals</div>
               </div>
               <div class="tile-role">MANDOLIN CHOP</div>
             </div>
@@ -303,18 +581,16 @@
             <div class="personnel-tile">
               <div class="tile-info">
                 <h4 class="picker-name">Sam Gottlieb</h4>
-                <div class="picker-instrument">Lead &amp; Harmony Vocals</div>
               </div>
               <div class="tile-role">FLATPICKING GUITAR</div>
             </div>
 
-            <!-- Mitchell Harbin -->
+            <!-- Sarah Swilley -->
             <div class="personnel-tile">
               <div class="tile-info">
-                <h4 class="picker-name">Mitchell Harbin</h4>
-                <div class="picker-instrument">Lead &amp; Harmony Vocals</div>
+                <h4 class="picker-name">Sarah Swilley</h4>
               </div>
-              <div class="tile-role">UPRIGHT BASS</div>
+              <div class="tile-role">FLATPICKING GUITAR</div>
             </div>
 
           </div>
@@ -329,7 +605,7 @@
         
         <div class="section-title-bar">
           <div class="title-left">
-            <span class="section-badge">[ AUDIO & VIDEO ARCHIVE ]</span>
+            <span class="section-badge">AUDIO & VIDEO ARCHIVE</span>
             <h2 class="section-title">LIVE SESSIONS</h2>
           </div>
           <p class="section-subtitle">Live uncut takes from festival stages, brewery sessions, and mountain hoedowns.</p>
@@ -434,21 +710,21 @@
         
         <div class="section-title-bar">
           <div class="title-left">
-            <span class="section-badge">[ INQUIRIES & DISPATCH ]</span>
+            <span class="section-badge">INQUIRIES & DISPATCH</span>
             <h2 class="section-title">STAY IN TOUCH & BOOKING</h2>
           </div>
           <p class="section-subtitle">Get in touch for brewery bookings, festival lineups, weddings, and private gatherings.</p>
         </div>
 
-        <div class="contact-split-grid">
+        <div class="contact-split-grid contact-socials-only">
           
-          <!-- Left Column Info -->
+          <!-- Full-Width Socials & Direct Contact Card -->
           <div class="contact-info-column">
             <div class="contact-card-header">
-              <span class="contact-badge">DIRECT BOOKING</span>
+              <span class="contact-badge">DIRECT BOOKING & SOCIALS</span>
               <h3 class="contact-headline">Bluegrass Music For All Occasions</h3>
               <p class="contact-desc">
-                Nestled in the Blue Ridge Mountains of Western North Carolina. Available for brewery pickings, festivals, barn dances, mountain weddings, private gatherings, and community song circles.
+                Nestled in the Blue Ridge Mountains of Western North Carolina. Reach out directly via email or follow us on socials for brewery pickings, festivals, barn dances, mountain weddings, and private gatherings.
               </p>
             </div>
 
@@ -463,8 +739,8 @@
             <!-- Contact Specs Table -->
             <div class="contact-specs-table">
               <div class="spec-row">
-                <span class="spec-label">HOME BASE</span>
-                <span class="spec-val">Asheville, NC & Western North Carolina</span>
+                <span class="spec-label">DIRECT EMAIL</span>
+                <span class="spec-val"><a href="mailto:appalachiahaze@gmail.com">appalachiahaze@gmail.com</a></span>
               </div>
               <div class="spec-row">
                 <span class="spec-label">FACEBOOK</span>
@@ -479,60 +755,9 @@
                 <span class="spec-val"><a href="https://www.youtube.com/@AppalachiaHaze" target="_blank" rel="noopener">@AppalachiaHaze</a></span>
               </div>
               <div class="spec-row">
-                <span class="spec-label">DIRECT EMAIL</span>
-                <span class="spec-val"><a href="mailto:appalachiahaze@gmail.com">appalachiahaze@gmail.com</a></span>
+                <span class="spec-label">HOME BASE</span>
+                <span class="spec-val">Asheville, NC & Western North Carolina</span>
               </div>
-              <div class="spec-row">
-                <span class="spec-label">FORMATS</span>
-                <span class="spec-val">Full Band, Brewery Jam Hosting, Festival Sets, Weddings</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Column Booking Form -->
-          <div class="contact-form-column">
-            <div class="form-wrapper">
-              <h4 class="form-title">BOOKING INQUIRY FORM</h4>
-              
-              <form id="bookingForm" class="modern-form" novalidate>
-                <div class="form-group">
-                  <label for="name">NAME / ORGANIZATION *</label>
-                  <input type="text" id="name" name="name" placeholder="e.g. Doc Watson / Hi-Wire Brewing" required>
-                </div>
-
-                <div class="form-group">
-                  <label for="email">EMAIL ADDRESS *</label>
-                  <input type="email" id="email" name="email" placeholder="picker@mountainstring.com" required>
-                </div>
-
-                <div class="form-row">
-                  <div class="form-group">
-                    <label for="date">EVENT DATE</label>
-                    <input type="date" id="date" name="date">
-                  </div>
-                  <div class="form-group">
-                    <label for="eventType">EVENT TYPE</label>
-                    <select id="eventType" name="eventType">
-                      <option value="brewery">Brewery / Bar Gig</option>
-                      <option value="festival">Festival / Community Fair</option>
-                      <option value="wedding">Barn / Mountain Wedding</option>
-                      <option value="jam">Brewery Jam Hosting</option>
-                      <option value="other">Other Gathering</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label for="message">EVENT DETAILS & LOCATION *</label>
-                  <textarea id="message" name="message" rows="4" placeholder="Tell us about the venue, sound setup, schedule, and what you have in mind..." required></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-primary btn-block">
-                  SEND BOOKING INQUIRY <span class="btn-arrow">&rarr;</span>
-                </button>
-                
-                <div id="formFeedback" class="form-feedback"></div>
-              </form>
             </div>
           </div>
 
@@ -614,4 +839,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-

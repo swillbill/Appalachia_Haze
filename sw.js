@@ -3,7 +3,7 @@
  * Caches core assets for offline access and mobile app installability
  */
 
-const CACHE_NAME = 'appalachia-haze-v1';
+const CACHE_NAME = 'appalachia-haze-v30';
 const STATIC_ASSETS = [
   './',
   './index.html',
@@ -40,7 +40,7 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   // Network first with cache fallback
   event.respondWith(
-    fetch(event.request)
+    fetch(event.request, { cache: 'no-store' })
       .then((networkResponse) => {
         if (event.request.method === 'GET' && networkResponse && networkResponse.status === 200) {
           const responseClone = networkResponse.clone();

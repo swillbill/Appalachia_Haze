@@ -21,13 +21,13 @@
   /* Blue Ridge Forest & Contemporary Accents */
   --color-pine: #234338;            /* Deep Blue Ridge Forest Pine */
   --color-pine-light: #365e4b;      /* Sage Moss */
-  --color-accent: #c6f91f;          /* Modern Acid Lime / Chartreuse (Shadowgrass) */
-  --color-accent-amber: #dca134;    /* Fiddle Varnish Amber Accent */
+  --color-accent: #e8a838;          /* Warm Fiddle Amber & Sunset Gold */
+  --color-accent-amber: #c97a2b;    /* Deep Bourbon / Sunset Copper Accent */
   
   /* Typography — Hippie 60s/70s Psychedelic Display & High-Legibility Sans */
-  --font-hippie: 'Shrikhand', 'Spicy Rice', cursive, sans-serif;
-  --font-groovy: 'Shrikhand', 'Caprasimo', 'Cooper Black', cursive, serif;
-  --font-psychedelic: 'Shrikhand', 'Spicy Rice', cursive, sans-serif;
+  --font-hippie: 'Luckiest Guy', cursive, sans-serif;
+  --font-groovy: 'Luckiest Guy', cursive, serif;
+  --font-psychedelic: 'Luckiest Guy', cursive, sans-serif;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   
   /* Layout & Geometry */
@@ -172,8 +172,108 @@ button, input, select, textarea {
   color: var(--color-pine);
 }
 
-/* Center Brand Wordmark */
+/* Center Brand Wordmark & Hand-Drawn Cloud SVG Logo */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.nav-cloud-logo {
+  height: 58px;
+  width: auto;
+  max-width: 240px;
+  display: block;
+  overflow: visible;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brand-logo:hover .nav-cloud-logo {
+  transform: scale(1.04) rotate(-1deg);
+}
+
+.hero-cloud-logo {
+  width: min(92vw, 860px);
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  overflow: visible;
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.45));
+  animation: cloudLogoFloat 5.5s ease-in-out infinite alternate;
+}
+
+@keyframes cloudLogoFloat {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+  100% {
+    transform: translateY(-6px) scale(1.015);
+  }
+}
+
+.cloud-svg-text-shadow {
+  font-family: var(--font-hippie);
+  font-size: 58px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  fill: #3b2a1e;
+  stroke: #3b2a1e;
+  stroke-width: 6.5px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  paint-order: stroke fill;
+}
+
+.cloud-svg-text-main {
+  font-family: var(--font-hippie);
+  font-size: 58px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  stroke: #3b2a1e;
+  stroke-width: 5.5px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  paint-order: stroke fill;
+}
 .brand-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.floating-subcloud {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.subcloud-1, .subcloud-5 {
+  animation: subcloudDriftA 4.2s ease-in-out infinite alternate;
+}
+
+.subcloud-2, .subcloud-4 {
+  animation: subcloudDriftB 5.1s ease-in-out infinite alternate;
+}
+
+.subcloud-3, .subcloud-6 {
+  animation: subcloudDriftA 3.7s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes subcloudDriftA {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  100% { transform: translate(-6px, -4px) rotate(-1.5deg); }
+}
+
+@keyframes subcloudDriftB {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  100% { transform: translate(7px, -5px) rotate(1.5deg); }
+}
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -363,6 +463,45 @@ button, input, select, textarea {
   mix-blend-mode: screen;
 }
 
+.woodcut-sky-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.rubberhose-flower-emblem {
+  display: flex;
+  justify-content: center;
+  margin: -14px auto 14px;
+}
+
+.flower-mascot-svg {
+  width: 175px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 6px 12px rgba(44, 30, 20, 0.35));
+  animation: flowerBob 4.2s ease-in-out infinite alternate;
+}
+
+@keyframes flowerBob {
+  0% { transform: translateY(0px) rotate(-1.5deg); }
+  100% { transform: translateY(-4px) rotate(1.5deg); }
+}
+
+.rubberhose-cloud-buddy {
+  animation: buddyBob 3.8s ease-in-out infinite alternate;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes buddyBob {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-5px); }
+}
+}
+
 /* Base Cloud Generator */
 .smoke-cloud {
   position: absolute;
@@ -414,7 +553,7 @@ button, input, select, textarea {
   background: radial-gradient(
     ellipse at center,
     rgba(244, 243, 234, 0.38) 0%,
-    rgba(198, 249, 31, 0.18) 35%,
+    rgba(232, 168, 56, 0.22) 35%,
     rgba(35, 67, 56, 0.1) 65%,
     transparent 100%
   );
@@ -575,7 +714,7 @@ button, input, select, textarea {
   background: radial-gradient(
     ellipse at center,
     rgba(220, 161, 52, 0.28) 0%,
-    rgba(198, 249, 31, 0.2) 30%,
+    rgba(232, 168, 56, 0.25) 30%,
     rgba(35, 67, 56, 0.18) 60%,
     transparent 80%
   );
@@ -608,7 +747,7 @@ button, input, select, textarea {
   color: #ffffff;
   text-shadow: 
     0 0 18px rgba(255, 255, 255, 0.35),
-    0 0 42px rgba(198, 249, 31, 0.35),
+    0 0 42px rgba(232, 168, 56, 0.4),
     0 0 78px rgba(220, 161, 52, 0.3),
     0 0 115px rgba(35, 67, 56, 0.5),
     3px 4px 0px rgba(17, 20, 19, 0.98),
@@ -621,7 +760,7 @@ button, input, select, textarea {
   0% {
     text-shadow: 
       0 0 18px rgba(255, 255, 255, 0.35),
-      0 0 42px rgba(198, 249, 31, 0.35),
+      0 0 42px rgba(232, 168, 56, 0.4),
       0 0 78px rgba(220, 161, 52, 0.3),
       0 0 115px rgba(35, 67, 56, 0.5),
       3px 4px 0px rgba(17, 20, 19, 0.98),
@@ -631,7 +770,7 @@ button, input, select, textarea {
   100% {
     text-shadow: 
       0 0 25px rgba(255, 255, 255, 0.5),
-      0 0 58px rgba(198, 249, 31, 0.5),
+      0 0 58px rgba(232, 168, 56, 0.55),
       0 0 98px rgba(220, 161, 52, 0.45),
       0 0 135px rgba(35, 67, 56, 0.65),
       3px 4px 0px rgba(17, 20, 19, 0.98),
@@ -650,6 +789,10 @@ button, input, select, textarea {
   text-transform: none;
   color: #ffffff;
   background: rgba(17, 20, 19, 0.78);
+  color: #ffffff;
+  border: 2.5px solid #3b2a1e;
+  border-radius: 999px;
+  box-shadow: 5px 5px 0px #3b2a1e;
   border: 2px solid var(--color-accent);
   box-shadow: 4px 4px 0px var(--color-pine);
   padding: 10px 24px;
@@ -662,7 +805,9 @@ button, input, select, textarea {
 
 .hero-prose {
   font-size: clamp(1.1rem, 2vw, 1.35rem);
-  color: #e2e8e4;
+  color: #f3e6c9;
+  text-shadow: 0 2px 4px rgba(44, 30, 20, 0.6);
+  font-weight: 500;
   max-width: 760px;
   margin: 0 auto 30px auto;
   line-height: 1.6;
@@ -964,8 +1109,8 @@ button, input, select, textarea {
 }
 
 .badge-fest {
-  background: rgba(198, 249, 31, 0.25);
-  color: #3b5700;
+  background: rgba(232, 168, 56, 0.25);
+  color: #7a4a0b;
 }
 
 .btn-ticket {
@@ -1866,3 +2011,1076 @@ button, input, select, textarea {
   }
 }
 
+
+/* Hero Cloud + Flower Woodcut Illustration Sizing */
+.hero-cloud-logo {
+  width: min(94vw, 880px);
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  overflow: visible;
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.48));
+}
+
+
+/* ==========================================================================
+   TRAIN SONGZ HAND-DRAWN FINE-LINER ZINE THEME (Warm Unbleached Paper & Ink)
+   ========================================================================== */
+
+:root {
+  --color-bg: #e6dec8;
+  --color-bg-alt: #efe7d3;
+  --color-bg-surface: #dcd2b8;
+  --color-text: #1e1b18;
+  --color-text-muted: #433c35;
+  --color-pine: #1e1b18;
+  --color-pine-dark: #12100e;
+  --color-accent: #dfd3b5;
+  --color-accent-hover: #d1c199;
+  --color-gridline: #1e1b18;
+  --gridline-width: 2.5px;
+
+  /* Keep Luckiest Guy for the Cloud Logo, use hand-inked zine fonts for page UI */
+  --font-hippie: 'Luckiest Guy', cursive;
+  --font-groovy: 'Walter Turncoat', 'Patrick Hand', cursive;
+  --font-sans: 'Patrick Hand', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* 1. Unbleached Zine Paper Texture & Hand-Printed Body Typography */
+body {
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(rgba(30, 27, 24, 0.045) 1px, transparent 0),
+    radial-gradient(rgba(138, 121, 93, 0.06) 1px, transparent 0),
+    linear-gradient(180deg, rgba(239, 231, 211, 0.4) 0%, rgba(224, 214, 188, 0.4) 100%);
+  background-size: 24px 24px, 36px 36px, 100% 100%;
+  background-position: 0 0, 12px 12px, 0 0;
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+}
+
+/* Header on unbleached paper with fine-liner border */
+.site-header {
+  background: #ebe2cc;
+  border-bottom: 3px solid #1e1b18;
+  box-shadow: 0 4px 0 rgba(30, 27, 24, 0.14);
+}
+
+.nav-link {
+  font-family: var(--font-groovy);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: #1e1b18;
+}
+
+.nav-link::after {
+  background: #1e1b18;
+  height: 2.5px;
+}
+
+.social-icon-link {
+  color: #1e1b18;
+}
+
+.social-icon-link:hover {
+  color: #4a433b;
+  transform: translateY(-2px) rotate(-4deg);
+}
+
+/* 2. Hero Pennant Flag Banner ("TRAIN SONGZ" Fluttering Flag Style) */
+.zine-pennant-banner {
+  position: relative;
+  width: min(92vw, 720px);
+  margin: 4px auto 12px;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.45));
+}
+
+.zine-pennant-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.zine-pennant-text {
+  font-family: 'Walter Turncoat', 'Patrick Hand', cursive;
+  font-size: 21px;
+  font-weight: 700;
+  fill: #1e1b18;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+}
+
+/* 3. Hand-Drawn Mountain Ridge & Cross-Hatched Pine Forest Divider */
+.zine-landscape-divider {
+  width: 100%;
+  background: var(--color-bg);
+  border-top: 3px solid #1e1b18;
+  border-bottom: 3px solid #1e1b18;
+  overflow: hidden;
+  line-height: 0;
+  position: relative;
+}
+
+.zine-divider-svg {
+  width: 100%;
+  height: auto;
+  min-height: 78px;
+  display: block;
+}
+
+/* 4. Hand-Drawn Callout Ribbon & Zine Buttons */
+.callout-ribbon {
+  background: #dcd2b8;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(30, 27, 24, 0.06) 0px,
+      rgba(30, 27, 24, 0.06) 1px,
+      transparent 1px,
+      transparent 7px
+    );
+  color: #1e1b18;
+  border-top: none;
+  border-bottom: 3px solid #1e1b18;
+  padding: 28px 0;
+}
+
+.callout-box {
+  background: #efe7d3;
+  border: 2.8px solid #1e1b18;
+  padding: 20px 28px;
+  box-shadow: 6px 6px 0 #1e1b18;
+  filter: url(#zineWobbleBox);
+}
+
+.callout-badge {
+  background: #1e1b18;
+  color: #efe7d3;
+  font-family: var(--font-groovy);
+  border: 2px solid #1e1b18;
+  padding: 4px 12px;
+  transform: rotate(-1.5deg);
+}
+
+.callout-headline {
+  color: #1e1b18;
+  font-family: var(--font-groovy);
+  font-weight: 700;
+}
+
+.callout-sub {
+  color: #433c35;
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+}
+
+/* Hand-Inked Zine Stamp Buttons */
+.btn {
+  font-family: var(--font-groovy);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  border: 2.6px solid #1e1b18;
+  box-shadow: 4px 4px 0 #1e1b18;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.btn-primary {
+  background: #efe7d3;
+  color: #1e1b18;
+  border-color: #1e1b18;
+}
+
+.btn-primary:hover {
+  background: #dfd3b5;
+  color: #1e1b18;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #1e1b18;
+}
+
+.btn-outline {
+  background: rgba(239, 231, 211, 0.92);
+  color: #1e1b18;
+  border: 2.6px solid #1e1b18;
+}
+
+.btn-outline:hover {
+  background: #efe7d3;
+  color: #1e1b18;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #1e1b18;
+}
+
+.btn-accent,
+.btn-ticket,
+.btn-nav {
+  background: #efe7d3;
+  color: #1e1b18;
+  border: 2.5px solid #1e1b18;
+  box-shadow: 3px 3px 0 #1e1b18;
+}
+
+.btn-accent:hover,
+.btn-ticket:hover,
+.btn-nav:hover {
+  background: #1e1b18;
+  color: #efe7d3;
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 #433c35;
+}
+
+/* 5. Wooden Plank Signs on Posts for Section Headers ("TRAIN OF FOOLS / WINTER 2026") */
+.section-block {
+  background: transparent;
+  border-bottom: 3px solid #1e1b18;
+}
+
+.section-block.bg-alt {
+  background: rgba(220, 210, 184, 0.45);
+}
+
+.section-title-bar {
+  align-items: flex-end;
+  margin-bottom: 44px;
+  padding-bottom: 24px;
+  border-bottom: 2.8px solid #1e1b18;
+  position: relative;
+}
+
+.section-title-bar .title-left {
+  position: relative;
+  background: #efe7d3;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 11px,
+      rgba(30, 27, 24, 0.07) 11px,
+      rgba(30, 27, 24, 0.07) 12.5px
+    );
+  border: 3px solid #1e1b18;
+  padding: 16px 28px 18px;
+  box-shadow: 5px 5px 0 #1e1b18;
+  transform: rotate(-0.8deg);
+  filter: url(#zineWobbleBox);
+}
+
+/* Left & Right Wooden Signposts sticking down into the ground line */
+.section-title-bar .title-left::before,
+.section-title-bar .title-left::after {
+  content: '';
+  position: absolute;
+  bottom: -27px;
+  width: 12px;
+  height: 25px;
+  background: #dfd3b5;
+  border-left: 2.8px solid #1e1b18;
+  border-right: 2.8px solid #1e1b18;
+  z-index: 2;
+}
+
+.section-title-bar .title-left::before {
+  left: 28px;
+}
+
+.section-title-bar .title-left::after {
+  right: 28px;
+}
+
+.section-tag {
+  display: inline-block;
+  font-family: var(--font-groovy);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1e1b18;
+  background: #dfd3b5;
+  border: 2px solid #1e1b18;
+  padding: 2px 10px;
+  margin-bottom: 8px;
+  letter-spacing: 1.5px;
+}
+
+.section-tag::after {
+  content: ' \2192';
+  font-weight: 700;
+}
+
+.section-heading {
+  font-family: var(--font-groovy);
+  font-weight: 700;
+  color: #1e1b18;
+  letter-spacing: 1px;
+  line-height: 1.05;
+}
+
+.section-subtitle {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  color: #1e1b18;
+  background: #efe7d3;
+  border: 2.2px solid #1e1b18;
+  padding: 6px 14px;
+  box-shadow: 3px 3px 0 #1e1b18;
+}
+
+/* 6. Wobbly Fine-Liner Boxes & Cross-Hatched Drop Shadows */
+.tour-ledger,
+.band-split-grid,
+.personnel-grid,
+.video-media-split,
+.contact-split-grid {
+  background: #efe7d3;
+  border: 3px solid #1e1b18;
+  position: relative;
+  /* Cross-hatched zine offset shadow */
+  box-shadow:
+    8px 8px 0 -2px #efe7d3,
+    8px 8px 0 0 #1e1b18,
+    12px 12px 0 0 rgba(30, 27, 24, 0.85);
+}
+
+.tour-row {
+  background: #efe7d3;
+  border-bottom: 2.5px solid #1e1b18;
+  padding: 22px 28px;
+}
+
+.tour-row:hover {
+  background: #e4d8bc;
+}
+
+/* 7. Highway Route Shield Badges for Show Dates & Video Reels ("NUMBER 9" Shield Style) */
+.col-date {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 92px;
+  min-height: 86px;
+  padding: 8px 10px 10px;
+  background: #ebe2cc;
+  border: 2.8px solid #1e1b18;
+  /* Classic US Highway Route Shield silhouette */
+  border-radius: 8px 8px 46% 46% / 8px 8px 52% 52%;
+  box-shadow: 3px 3px 0 #1e1b18;
+  text-align: center;
+  filter: url(#zineWobbleBox);
+}
+
+.col-date::before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: 4px;
+  right: 4px;
+  height: 2px;
+  background: #1e1b18;
+}
+
+.date-month {
+  font-family: var(--font-groovy);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #1e1b18;
+  margin-bottom: 4px;
+}
+
+.date-day {
+  font-family: var(--font-hippie);
+  font-size: 2rem;
+  line-height: 1;
+  color: #1e1b18;
+  margin-top: 2px;
+}
+
+.date-dow {
+  font-family: var(--font-groovy);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #433c35;
+}
+
+.venue-title {
+  font-family: var(--font-groovy);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1e1b18;
+}
+
+.venue-note {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  color: #433c35;
+}
+
+.city-name {
+  font-family: var(--font-groovy);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1e1b18;
+}
+
+/* Band Story & Personnel Cards */
+.band-story-column {
+  background: #efe7d3;
+}
+
+.story-lead {
+  font-family: var(--font-groovy);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1e1b18;
+}
+
+.story-body p {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  color: #2b2622;
+}
+
+.sound-pills span {
+  background: #ebe2cc;
+  border: 2px solid #1e1b18;
+  font-family: var(--font-groovy);
+  font-weight: 700;
+  color: #1e1b18;
+  box-shadow: 2px 2px 0 #1e1b18;
+}
+
+.sound-pills span:hover {
+  background: #1e1b18;
+  color: #efe7d3;
+}
+
+.personnel-header {
+  margin-bottom: 20px;
+}
+
+.subsection-title {
+  font-family: var(--font-groovy);
+  font-size: 1.35rem;
+  font-weight: 700;
+  display: inline-block;
+  background: #efe7d3;
+  border: 2.5px solid #1e1b18;
+  padding: 6px 18px;
+  box-shadow: 4px 4px 0 #1e1b18;
+}
+
+.personnel-tile {
+  background: #efe7d3;
+  border-right: 2.5px solid #1e1b18;
+}
+
+.personnel-tile:hover {
+  background: #e3d6b8;
+}
+
+.instrument-badge {
+  background: #dfd3b5;
+  border: 2px solid #1e1b18;
+  font-family: var(--font-groovy);
+  font-weight: 700;
+  color: #1e1b18;
+  box-shadow: 2px 2px 0 #1e1b18;
+}
+
+.musician-name {
+  font-family: var(--font-groovy);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e1b18;
+}
+
+/* Video Section & Route Shield Reel Numbers */
+.video-card-item {
+  background: #efe7d3;
+  border-bottom: 2.5px solid #1e1b18;
+}
+
+.video-card-item:hover {
+  background: #e4d8bc;
+}
+
+.video-card-item.active {
+  background: #dfd3b5;
+  color: #1e1b18;
+}
+
+.video-card-item.active .card-meta p,
+.video-card-item.active .card-indicator {
+  color: #1e1b18;
+}
+
+.card-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 44px;
+  background: #ebe2cc;
+  border: 2.5px solid #1e1b18;
+  border-radius: 6px 6px 46% 46%;
+  box-shadow: 2px 2px 0 #1e1b18;
+  font-family: var(--font-hippie);
+  font-size: 1.15rem;
+  color: #1e1b18;
+}
+
+.video-card-item.active .card-indicator {
+  background: #1e1b18;
+  color: #efe7d3;
+}
+
+.card-meta h4 {
+  font-family: var(--font-groovy);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+/* Contact Section & Form Inputs on Unbleached Paper */
+.contact-info-column {
+  background: #1e1b18;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(239, 231, 211, 0.04) 0px,
+      rgba(239, 231, 211, 0.04) 1px,
+      transparent 1px,
+      transparent 8px
+    );
+  color: #efe7d3;
+  border-right: 3px solid #1e1b18;
+}
+
+.contact-form-column {
+  background: #efe7d3;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: #f7f1e1;
+  border: 2.5px solid #1e1b18;
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  color: #1e1b18;
+  box-shadow: 3px 3px 0 rgba(30, 27, 24, 0.2);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  background: #ffffff;
+  box-shadow: 4px 4px 0 #1e1b18;
+}
+
+.site-footer {
+  background: #1e1b18;
+  color: #efe7d3;
+  border-top: 3px solid #1e1b18;
+}
+
+@media (max-width: 768px) {
+  .mobile-bottom-bar,
+  .nav-menu {
+    background: #ebe2cc;
+  }
+
+  .col-date {
+    flex-direction: column;
+    width: 84px;
+  }
+}
+
+
+/* --- Exact Selector Overrides for index.html Elements --- */
+.navbar,
+.navbar.scrolled {
+  background: #ebe2cc;
+  border-bottom: 3px solid #1e1b18;
+  box-shadow: 0 4px 0 rgba(30, 27, 24, 0.16);
+}
+
+.channel-pill {
+  background: #ebe2cc !important;
+  color: #1e1b18 !important;
+  border: 2.4px solid #1e1b18 !important;
+  font-family: var(--font-groovy) !important;
+  font-weight: 700 !important;
+  box-shadow: 3px 3px 0 #1e1b18 !important;
+}
+
+.channel-pill:hover {
+  background: #1e1b18 !important;
+  color: #efe7d3 !important;
+  transform: translate(-1px, -1px);
+}
+
+.btn-secondary {
+  background: #ebe2cc !important;
+  color: #1e1b18 !important;
+  border: 2.6px solid #1e1b18 !important;
+  box-shadow: 4px 4px 0 #1e1b18 !important;
+}
+
+.btn-secondary:hover {
+  background: #dfd3b5 !important;
+  color: #1e1b18 !important;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #1e1b18 !important;
+}
+
+.top-booking-callout {
+  background: #dcd2b8;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(30, 27, 24, 0.07) 0px,
+      rgba(30, 27, 24, 0.07) 1px,
+      transparent 1px,
+      transparent 7px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(30, 27, 24, 0.05) 0px,
+      rgba(30, 27, 24, 0.05) 1px,
+      transparent 1px,
+      transparent 7px
+    );
+  color: #1e1b18;
+  border-bottom: 3px solid #1e1b18;
+}
+
+.callout-tag {
+  display: inline-block;
+  background: #1e1b18;
+  color: #efe7d3 !important;
+  font-family: var(--font-groovy);
+  padding: 2px 10px;
+  margin-bottom: 6px;
+}
+
+.callout-title {
+  color: #1e1b18 !important;
+  font-family: var(--font-groovy);
+  font-weight: 700;
+}
+
+/* Sections on Warm Unbleached Zine Paper */
+.section,
+.tour-section,
+.band-section,
+.videos-section,
+.contact-section {
+  background: transparent !important;
+  border-bottom: 3px solid #1e1b18;
+}
+
+.band-section,
+.contact-section {
+  background: rgba(220, 210, 184, 0.42) !important;
+}
+
+.section-badge {
+  display: inline-block;
+  font-family: var(--font-groovy);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1e1b18;
+  background: #dfd3b5;
+  border: 2px solid #1e1b18;
+  padding: 2px 10px;
+  margin-bottom: 6px;
+}
+
+.section-badge::after {
+  content: ' \2192';
+}
+
+.section-title {
+  font-family: var(--font-groovy);
+  font-weight: 700;
+  color: #1e1b18;
+}
+
+/* Tour Table & Highway Route Shield Dates */
+.tour-table-container {
+  background: #efe7d3;
+  border: 3px solid #1e1b18;
+  box-shadow:
+    8px 8px 0 -2px #efe7d3,
+    8px 8px 0 0 #1e1b18,
+    12px 12px 0 0 rgba(30, 27, 24, 0.85);
+}
+
+.tour-header-row {
+  background: #dfd3b5 !important;
+  border-bottom: 2.8px solid #1e1b18 !important;
+  color: #1e1b18 !important;
+  font-family: var(--font-groovy);
+}
+
+.tour-header-row .col-date {
+  width: auto;
+  min-height: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  filter: none;
+}
+
+.tour-header-row .col-date::before {
+  display: none;
+}
+
+.venue-main {
+  font-family: var(--font-groovy);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1e1b18;
+}
+
+.venue-detail {
+  font-family: var(--font-sans);
+  font-size: 1.08rem;
+  color: #433c35;
+}
+
+.location-name {
+  font-family: var(--font-groovy);
+  font-weight: 700;
+  color: #1e1b18;
+}
+
+.tour-bottom-bar {
+  background: #dfd3b5;
+  border-top: 2.5px solid #1e1b18;
+  font-family: var(--font-groovy);
+  color: #1e1b18;
+}
+
+/* Band Story & Pickers Grid */
+.lead-paragraph {
+  font-family: var(--font-groovy);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1e1b18;
+}
+
+.band-prose-body p {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  color: #1e1b18;
+}
+
+.personnel-title {
+  font-family: var(--font-groovy);
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: #efe7d3;
+  border: 2.5px solid #1e1b18;
+  padding: 6px 18px;
+  box-shadow: 4px 4px 0 #1e1b18;
+}
+
+.personnel-tag {
+  font-family: var(--font-groovy);
+  font-weight: 700;
+  background: #dfd3b5;
+  border: 2px solid #1e1b18;
+  padding: 4px 12px;
+  color: #1e1b18;
+  box-shadow: 3px 3px 0 #1e1b18;
+}
+
+.picker-name {
+  font-family: var(--font-groovy);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1e1b18;
+}
+
+.tile-role {
+  background: #dfd3b5;
+  border: 2px solid #1e1b18;
+  font-family: var(--font-groovy);
+  font-weight: 700;
+  color: #1e1b18;
+  padding: 4px 10px;
+  display: inline-block;
+  box-shadow: 2px 2px 0 #1e1b18;
+}
+
+/* Video Player & Session Reels */
+.video-screen-frame,
+.video-details-card,
+.video-playlist-column {
+  background: #efe7d3;
+}
+
+.video-meta-bar,
+.playlist-heading {
+  background: #dfd3b5;
+  color: #1e1b18;
+  border-bottom: 2.5px solid #1e1b18;
+  font-family: var(--font-groovy);
+  font-weight: 700;
+}
+
+.video-tag-live {
+  background: #1e1b18;
+  color: #efe7d3;
+}
+
+.video-title {
+  font-family: var(--font-groovy);
+  font-weight: 700;
+  color: #1e1b18;
+}
+
+.video-desc {
+  font-family: var(--font-sans);
+  font-size: 1.12rem;
+  color: #2b2622;
+}
+
+.video-card {
+  background: #efe7d3;
+  border-bottom: 2.5px solid #1e1b18;
+}
+
+.video-card:hover {
+  background: #e4d8bc;
+}
+
+.video-card.active {
+  background: #dfd3b5;
+  color: #1e1b18;
+}
+
+.video-card.active .card-title,
+.video-card.active .card-sub,
+.video-card.active .card-play-icon {
+  color: #1e1b18;
+}
+
+.video-card.active .card-indicator {
+  background: #1e1b18;
+  color: #efe7d3;
+}
+
+.card-title {
+  font-family: var(--font-groovy);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #1e1b18;
+}
+
+.card-sub {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: #433c35;
+}
+
+
+/* --- Single-Column Socials & Direct Contact Zine Card (No Inquiry Form) --- */
+.contact-split-grid.contact-socials-only {
+  grid-template-columns: 1fr;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.contact-socials-only .contact-info-column {
+  background: #efe7d3;
+  background-image: none;
+  color: #1e1b18;
+  border-right: none;
+  padding: 40px 44px;
+}
+
+.contact-socials-only .contact-badge {
+  background: #dfd3b5;
+  color: #1e1b18;
+  border: 2px solid #1e1b18;
+  font-family: var(--font-groovy);
+  font-weight: 700;
+  padding: 3px 12px;
+  box-shadow: 2px 2px 0 #1e1b18;
+}
+
+.contact-socials-only .contact-headline {
+  color: #1e1b18;
+  font-family: var(--font-groovy);
+  font-weight: 700;
+}
+
+.contact-socials-only .contact-desc {
+  color: #2b2622;
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+}
+
+.contact-socials-only .contact-channel-bar {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.contact-socials-only .channel-btn {
+  background: #ebe2cc;
+  border: 2.5px solid #1e1b18;
+  color: #1e1b18;
+  font-family: var(--font-groovy);
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 4px 4px 0 #1e1b18;
+}
+
+.contact-socials-only .channel-btn:hover {
+  background: #1e1b18;
+  color: #efe7d3;
+  border-color: #1e1b18;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #433c35;
+}
+
+.contact-socials-only .contact-specs-table {
+  border-top: 2.5px solid #1e1b18;
+}
+
+.contact-socials-only .spec-row {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1.8px dashed rgba(30, 27, 24, 0.35);
+  padding: 14px 0;
+  font-size: 1.08rem;
+}
+
+.contact-socials-only .spec-label {
+  color: #1e1b18;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.contact-socials-only .spec-val,
+.contact-socials-only .spec-val a {
+  color: #1e1b18;
+  font-family: var(--font-sans);
+  font-size: 1.12rem;
+  font-weight: 600;
+}
+
+.contact-socials-only .spec-val a:hover {
+  background: #dfd3b5;
+}
+
+@media (max-width: 768px) {
+  .contact-socials-only .contact-info-column {
+    padding: 28px 20px;
+  }
+
+  .contact-socials-only .contact-channel-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-socials-only .spec-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
+
+
+/* --- HERO STEP 1: Warm Unbleached Zine Paper Sky (No Dark Photo Overlay) --- */
+.hero {
+  background:
+    radial-gradient(rgba(30, 27, 24, 0.05) 1px, transparent 0),
+    radial-gradient(rgba(138, 121, 93, 0.06) 1px, transparent 0),
+    linear-gradient(180deg, #efe7d3 0%, #e6dec8 65%, #dfd4ba 100%) !important;
+  background-size: 24px 24px, 36px 36px, 100% 100% !important;
+  background-position: 0 0, 12px 12px, 0 0 !important;
+  background-attachment: scroll !important;
+  color: #1e1b18 !important;
+}
+
+.smoke-atmosphere {
+  display: none !important;
+}
+
+.hero-cloud-logo,
+.flower-mascot-svg,
+.zine-pennant-banner {
+  filter: none !important;
+}
+
+.hero-prose {
+  color: #1e1b18 !important;
+  text-shadow: none !important;
+  font-family: var(--font-sans);
+  font-size: clamp(1.18rem, 2.1vw, 1.4rem);
+  font-weight: 600;
+}
+
+.scroll-down-arrow {
+  color: #1e1b18 !important;
+  font-family: var(--font-groovy);
+  font-weight: 700;
+}
+
+
+/* --- HERO STEP 2: Hand-Drawn Fine-Liner Blue Ridge Mountain Peaks & Ridge Clouds --- */
+.hero-overlay {
+  display: none !important;
+}
+
+.zine-hero-backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.zine-hero-scene-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hero-prose {
+  background: rgba(239, 231, 211, 0.88);
+  border: 2.2px solid #1e1b18;
+  padding: 10px 20px;
+  box-shadow: 4px 4px 0 #1e1b18;
+}
+
+
+/* --- HERO STEP 3: Cross-Hatched Pine Tree Forests & Split-Rail Fences --- */
+.zine-landscape-divider {
+  display: none;
+}
+
+
+/* --- Floating Hand-Drawn Ribbon Banner Animation --- */
+.zine-floating-banner {
+  animation: bannerFloatBob 4.8s ease-in-out infinite alternate;
+}
+
+@keyframes bannerFloatBob {
+  0% {
+    transform: translateY(0px) rotate(-0.4deg);
+  }
+  100% {
+    transform: translateY(-5px) rotate(0.4deg);
+  }
+}

@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('./sw.js')
         .then((reg) => {
-          console.log('Appalachia Haze PWA registered successfully:', reg.scope);
+          if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') { reg.unregister(); caches.keys().then(ks => ks.forEach(k => caches.delete(k))); } else { reg.update(); }
         })
         .catch((err) => {
           console.log('PWA registration error:', err);
