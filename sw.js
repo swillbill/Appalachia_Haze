@@ -3,7 +3,7 @@
  * Caches core assets for offline access and mobile app installability
  */
 
-const CACHE_NAME = 'appalachia-haze-v33';
+const CACHE_NAME = 'appalachia-haze-v34';
 const STATIC_ASSETS = [
   './',
   './index.html',
